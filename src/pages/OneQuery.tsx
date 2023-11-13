@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import useGetUser from "../hooks/useGetUser";
+import { useGetUser } from "../hooks/useGetUser";
 
 export const OneQuery = () => {
   const { status, data, error } = useGetUser();
