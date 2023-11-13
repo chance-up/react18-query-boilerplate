@@ -38,7 +38,7 @@ HttpClient.interceptors.request.use(
 
 HttpClient.interceptors.response.use(
   (response: AxiosResponse): AxiosResponse => {
-    return response.data;
+    return response;
   }
 );
 

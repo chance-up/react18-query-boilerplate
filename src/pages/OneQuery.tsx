@@ -1,11 +1,21 @@
 import styled from "@emotion/styled";
+import useGetUser from "../hooks/useGetUser";
 
 export const OneQuery = () => {
+  const { status, data, error } = useGetUser();
+
+  if (status === "pending") {
+    return <span>useGetUser Loading...</span>;
+  }
+  if (status === "error") {
+    return <span>useGetUser Error: {error.message}</span>;
+  }
+
   return (
     <div>
-      <h1>Posts</h1>
+      <h1>User</h1>
       <UserCard>
-        {/* <img src={userData.thumbnail} /> <p>{userData.id}</p> */}
+        <h1>{data.id}</h1>
       </UserCard>
     </div>
   );
