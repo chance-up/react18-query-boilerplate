@@ -15,7 +15,11 @@ export const OneQuery = () => {
     <div>
       <h1>User</h1>
       <UserCard>
-        <h1>{data.id}</h1>
+        <img src={data.thumbnail}></img>
+        <UserCardBody>
+          <h1>{data.id}</h1>
+          <span>{data.name}</span>
+        </UserCardBody>
       </UserCard>
     </div>
   );
@@ -24,6 +28,12 @@ export const OneQuery = () => {
 const UserCard = styled.div`
   border: solid 1px gainsboro;
   border-radius: 10px;
-  font-size: 19px;
-  font-weight: 600;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+`;
+
+const UserCardBody = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
