@@ -26,6 +26,16 @@ export const Root = () => {
                 Multiple Query
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to={`multiple-query-components`}
+                className={({ isActive, isPending }) =>
+                  isActive ? "active" : isPending ? "pending" : ""
+                }
+              >
+                Multiple Query With Components
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
