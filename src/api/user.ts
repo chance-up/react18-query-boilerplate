@@ -9,12 +9,3 @@ export const getUser = async () => {
     throw Error("");
   }
 };
-
-export const getUserSlow = async () => {
-  try {
-    const response = await httpClient.get<User>(`/user-slow`);
-    return response.data;
-  } catch (error) {
-    throw Error("");
-  }
-};

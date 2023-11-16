@@ -3,11 +3,7 @@ import { post } from "./post";
 import { user } from "./user";
 
 export function handlers() {
-  return [
-    http.get("/post", getPost),
-    http.get("/user", getUser),
-    http.get("/user-slow", getUserSlow),
-  ];
+  return [http.get("/post", getPost), http.get("/user", getUser)];
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -18,10 +14,6 @@ const getPost = async () => {
 };
 
 const getUser = async () => {
-  return HttpResponse.json(user);
-};
-
-const getUserSlow = async () => {
-  await sleep(5000);
+  await sleep(2000);
   return HttpResponse.json(user);
 };

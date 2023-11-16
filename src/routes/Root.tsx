@@ -1,6 +1,10 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Navigate } from "react-router-dom";
 
 export const Root = () => {
+  const movePage = (pageName: string) => {
+    return Navigate({ to: pageName });
+  };
+
   return (
     <>
       <div id="sidebar">
@@ -35,6 +39,25 @@ export const Root = () => {
               >
                 Multiple Query With Components
               </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={`multiple-query-suspense`}
+                className={({ isActive, isPending }) =>
+                  isActive ? "active" : isPending ? "pending" : ""
+                }
+              >
+                One Query With Suspense
+              </NavLink>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  movePage("multiple-query-suspense");
+                }}
+              >
+                One Query With Suspense
+              </button>
             </li>
           </ul>
         </nav>
